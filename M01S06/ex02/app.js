@@ -1,11 +1,11 @@
-const paragrafElement = document.createElement('p');
+const paragraphElement = document.createElement('p');
 const userAgentString = navigator.userAgent;
-const message = `Nu stim ce browser folosesti`;
+const message = 'Nu stim ce browser folosesti';
 
 if (userAgentString.includes('chrome')) {
-  message = `Navighez folosind chrome`;
+  message = 'Navighez folosind Chrome';
 }
 
-pharagrafElement.innerText = message;
+paragraphElement.innerText = message;
 
-document.body.append(paragrafElement);
+document.body.append(paragraphElement);

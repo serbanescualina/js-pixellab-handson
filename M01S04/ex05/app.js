@@ -2,15 +2,15 @@ var defaultNumber = 2;
 var defaultWarningMessage = `Nu ai introdus un numar. Folosesc ${defaultNumber}`;
 
 var i = 0;
-var number = prompt('Introdu numar');
-number = number.trim();
+var number = prompt('Introdu un numar');
 
-if (number == null || number.length < 1) {
+if (number === null || number.trim().length === 0) {
   console.warn(defaultWarningMessage);
   number = defaultNumber;
 } else {
   number = Number(number);
 }
+
 if (isNaN(number) === true) {
   console.warn(defaultWarningMessage);
   number = defaultNumber;
