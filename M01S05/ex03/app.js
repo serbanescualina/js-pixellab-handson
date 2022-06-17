@@ -27,3 +27,21 @@ const field03Surface = calculateRectangleArea(400, 370);
 const field03Yield = yield * field03Surface;
 
 console.log(field03Yield * beerYield);
+
+console.warn(
+  `Stiind ca un camp dreptunghiular de grau produce 32kg/m2  de faina. Afla si afiseaza cate kilograme de paine produce un camp de 300 pe 200 metri stiind ca dintr-un kilogram de faina ies 2.5 kg de paine.`,
+);
+
+const flourYield = 32 / 2.5;
+
+const fieldSurface = calculateRectangleArea(300, 200);
+const fieldYield = flourYield * fieldSurface;
+console.log(fieldYield);
+
+console.warn(`Dar doua campuri de 150 pe 200 si 500 pe 300 in total?
+`);
+const fieldYield001 = calculateRectangleArea(150, 200) * flourYield;
+const fieldYield002 = calculateRectangleArea(500, 300) * flourYield;
+const totalYieldProduction = fieldYield001 + fieldYield002;
+
+console.log(totalYieldProduction);

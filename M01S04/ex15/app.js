@@ -51,7 +51,6 @@ const pluralize2 = (value, data) => {
 };
 
 const friendsCount = person.friends.length;
-
 for (let i = 0; i < friendsCount; i++) {
   const outerFriend = person.friends[i];
 
@@ -65,13 +64,12 @@ for (let i = 0; i < friendsCount; i++) {
     const ageDiff = Math.abs(outerFriend.age - innerFriend.age);
 
     console.log(
-      `Intre ${outerFriend.name} si ${innerFriend.name} este o diferenta de ${ageDiff} ani.`,
-    );
-
-    console.log(
       `Intre ${outerFriend.name} si ${
         innerFriend.name
-      } este o diferenta de ${ageDiff} ${pluralize(ageDiff)}.`,
+      } este o diferenta de ${ageDiff} ${pluralize(ageDiff, {
+        one: 'an',
+        many: 'ani',
+      })}.`,
     );
   }
 }
