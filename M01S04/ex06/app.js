@@ -124,7 +124,7 @@ var message = ``;
 for (var i = 0; i <= person.friends.length - 1; i++) {
   var friend = person.friends[i];
 
-  if (friend.age % 2 !== 0 && friend.age < 30) {
+  if (friend.age % 2 !== 0) {
     var ageDiff = Math.abs(person.age - friend.age);
     var message = `Intre ${person.name} si ${friend.name} este o diferenta de ${ageDiff} ani.`;
   }

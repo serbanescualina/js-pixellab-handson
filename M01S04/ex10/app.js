@@ -80,12 +80,13 @@ console.warn(
 );
 
 var ageDiff = 0;
-person.friends.forEach(function (friend, index) {
-  if (Math.abs(person.age - friend.age) >= 2) {
-    ageDiff = Math.abs(person.age - friend.age);
+person.friends.forEach(function (friend) {
+  ageDiff = Math.abs(person.age - friend.age);
+
+  if (ageDiff >= 2) {
+    console.log(ageDiff);
   }
 });
-console.log(ageDiff);
 
 console.warn(
   `Afiseaza fraza: "Intre Alina si Larry este o diferenta de xx ani. Intre Dragos si Steven... "`,
