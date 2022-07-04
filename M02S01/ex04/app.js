@@ -1,8 +1,20 @@
 class Car {
-  constructor(positionX, positionY, color) {
+  constructor(positionX, positionY, color, capColor, tireColor, areHazards) {
     this.positionX = positionX;
     this.positionY = positionY;
     this.color = color;
+
+    this.capColor = capColor;
+    this.tireColor = tireColor;
+    this.areHazards = areHazards;
+
+    if (capColor === undefined) {
+      capColor = 'black';
+    }
+
+    if (tireColor === undefined) {
+      tireColor = 'black';
+    }
 
     this.frame = document.createElement(`div`);
     this.frame.classList.add('frame');
@@ -36,6 +48,7 @@ class Car {
     this.carBody.append(this.wheelFront);
     this.hubCapFront = document.createElement('div');
     this.hubCapFront.classList.add(`wheel__cap`);
+    this.hubCapFront.style.backgroundColor = `${this.capColor}`;
     this.wheelFront.append(this.hubCapFront);
 
     this.wheelBack = document.createElement('div');
@@ -43,7 +56,11 @@ class Car {
     this.carBody.append(this.wheelBack);
     this.hubCapBack = document.createElement('div');
     this.hubCapBack.classList.add(`wheel__cap`);
+    this.hubCapBack.style.backgroundColor = `${this.capColor}`;
     this.wheelBack.append(this.hubCapBack);
+
+    this.wheelBack.style.backgroundColor = `${this.tireColor}`;
+    this.wheelFront.style.backgroundColor = `${this.tireColor}`;
   }
 
   moveTo(positionX, positionY) {
@@ -65,8 +82,26 @@ class Car {
   render() {
     document.body.append(this.frame);
   }
+
+  changeCapColor(newColor) {
+    this.hubCapFront.style.backgroundColor = newColor;
+    this.hubCapBack.style.backgroundColor = newColor;
+  }
+
+  changeTireColor(newColor) {
+    this.wheelBack.style.backgroundColor = newColor;
+    this.wheelFront.style.backgroundColor = newColor;
+  }
+
+  hazardsOn() {
+    this.lightFront.style.backgroundColor = 'yellow';
+  }
 }
 
 const car01 = new Car(140, 140, `teal`);
 car01.render();
 car01.moveTo(500, 600);
+
+const car02 = new Car(10, 10, `black`, `red`, `blue`);
+car02.render();
+car02.moveTo(400, 500);
