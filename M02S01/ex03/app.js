@@ -18,6 +18,24 @@ const Car = {
     this.setSpeed(this.speed - 1);
   },
 
+  areLightsOn: false,
+
+  turnLightsOn() {
+    this.areLightsOn = true;
+  },
+
+  turnLightsOff() {
+    this.areLightsOn = false;
+  },
+
+  flashLights() {
+    this.turnLightsOn();
+
+    setTimeout(() => {
+      this.turnLightsOff();
+    }, 3000);
+  },
+
   setSpeed: function (speed) {
     if (speed > this.topSpeed) {
       this.speed = this.topSpeed;
